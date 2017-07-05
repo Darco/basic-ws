@@ -1,3 +1,3 @@
 # basic-ws
 
-Poryecto con un arquetipo basico para crear servicios web SOAP
+Proyecto con un arquetipo basico (Maven) para crear servicios web SOAP
