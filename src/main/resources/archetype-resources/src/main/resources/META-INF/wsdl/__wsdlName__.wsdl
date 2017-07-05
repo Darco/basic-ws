@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions name="${className}"
+
+    targetNamespace="http://${domain}/${namespace}/${namespaceVersion}/definitions"
+    xmlns:tns="http://${domain}/${namespace}/${namespaceVersion}/definitions"
+    xmlns:tipos="http://${domain}/${namespace}/${namespaceVersion}/schemas"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/wsdl/encoding/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- The <types> element is a container for data type definitions using
+        some type system (such as XSD). -->
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://${domain}/${namespace}/${namespaceVersion}/schemas"
+            xmlns:tns="http://${domain}/${namespace}/${namespaceVersion}/schemas"
+            elementFormDefault="unqualified" attributeFormDefault="qualified">
+
+            <xsd:include schemaLocation="${wsdlName}.xsd" />
+
+            <xsd:element name="${wsdlName}Request" type="xsd:int" />
+            <xsd:element name="${wsdlName}Response" type="tipos:${wsdlName}Type" />
+
+        </xsd:schema>
+    </wsdl:types>
+
+    <!-- The <message> element defines an abstract, typed definition of the
+        data being communicated. -->
+
+    <wsdl:message name="${wsdlName}Request">
+        <wsdl:part name="${wsdlName}Rq" element="tipos:${wsdlName}Request" />
+    </wsdl:message>
+    <wsdl:message name="${wsdlName}Response">
+        <wsdl:part name="${wsdlName}Rs" element="tipos:${wsdlName}Response" />
+    </wsdl:message>
+
+    <!-- The <portType> defines a web service, the operations that can be performed,
+        and the messages that are involved. -->
+    <wsdl:portType name="${className}PortType">
+        <!-- The <operation> element describes an abstract description of an action
+            supported by the service. -->
+        <wsdl:operation name="demo">
+            <wsdl:documentation>Capacidad demo</wsdl:documentation>
+            <wsdl:input message="tns:${wsdlName}Request" />
+            <wsdl:output message="tns:${wsdlName}Response" />
+        </wsdl:operation>
+    </wsdl:portType>
+
+</wsdl:definitions>

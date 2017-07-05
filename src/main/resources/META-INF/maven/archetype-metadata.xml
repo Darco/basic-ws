@@ -1,0 +1,126 @@
+
+<archetype-descriptor
+	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd">
+	<requiredProperties>
+		<requiredProperty key="basePackage">
+			<defaultValue>${packageInPathFormat}</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="wsdlName">
+			<defaultValue>${artifactId}</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="className">
+			<defaultValue>ClassName</defaultValue>
+		</requiredProperty>
+		<!-- <requiredProperty key="namespace"> <defaultValue>${packageInPathFormat}</defaultValue>
+			</requiredProperty> -->
+		<requiredProperty key="namespaceVersion">
+			<defaultValue>v1_0</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="namespace">
+			<defaultValue>utils/${artifactId}/test</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="namespacePackage">
+			<defaultValue>utils.${artifactId}.test</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="domain">
+			<defaultValue>planetmedia.com.mx</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="domainPackage">
+			<defaultValue>mx.com.planetmedia</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="domainPackagePathFormat">
+            <defaultValue>mx/com/planetmedia</defaultValue>
+        </requiredProperty>
+		<!-- <requiredProperty key="domainPathFormat"> <defaultValue>planetmedia/com/mx</defaultValue>
+			</requiredProperty> <requiredProperty key="domainPackagePathFormat"> <defaultValue>mx/com/planetmedia</defaultValue>
+			</requiredProperty> -->
+	</requiredProperties>
+
+	<fileSets>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/assembly</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/webapp</directory>
+			<includes>
+				<include>**/*.jsp</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*.xsd</include>
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
+				<include>**/*.sql</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*.wsdl</include>
+				<include>**/*.js</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/test/resources</directory>
+			<includes>
+				<include>**/*.xsd</include>
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>.settings</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>.settings</directory>
+			<includes>
+				<include>**/*.prefs</include>
+				<include>**/*.component</include>
+				<include>**/*.container</include>
+				<include>**/*.name</include>
+				<include>**/*.jsdtscope</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>.classpath</include>
+				<include>.project</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>MANIFEST.MF</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+	<!-- <modules> <module id=.. dir=.. name=..> <fileSets> <fileSet filtered=..
+		packaged=.. encoding=..> <directory /> <includes /> <excludes /> </fileSet>
+		</fileSets> <modules> <module> ...recursion... <module> </modules> </module>
+		</modules> -->
+</archetype-descriptor>

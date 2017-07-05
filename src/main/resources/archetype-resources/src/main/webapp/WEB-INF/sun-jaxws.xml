@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/jax-ws/ri/runtime http://docs.oracle.com/cd/E17802_01/webservices/webservices/docs/2.0/jaxws/sun-jaxws.xsd"
+    version="2.0">
+    <endpoint name="${className}PortType"
+        implementation="${package}.service.impl.${className}WSImpl"
+        wsdl="WEB-INF/wsdl/${wsdlName}-service.wsdl"
+        service="{http://${domain}/${namespace}/${namespaceVersion}/service}${wsdlName}Service"
+        port="{http://${domain}/${namespace}/${namespaceVersion}/service}${wsdlName}Port"
+        url-pattern="/${wsdlName}Service"  />
+</endpoints>
